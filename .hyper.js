@@ -109,7 +109,7 @@ module.exports = {
     shellArgs: ['--command=usr/bin/bash.exe', '-l', '-i'],
 
     // for environment variables
-    env: {},
+    env: { TERM: "cygwin" },
 
     // set to false for no bell
     bell: false,
