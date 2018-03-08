@@ -28,6 +28,7 @@ alias oamk="chrome https://oamk.fi/en/"
 alias slack="~/AppData/Local/slack/slack.exe"
 alias heidi="/c/'Program Files'/HeidiSQL/./heidisql.exe"
 alias steam="/c/'Program Files (x86)'/Steam/Steam.exe"
+alias shrug="echo '¯\_(ツ)_/¯'"
 
 translate() {
     if [ $# -eq 3 ]; then
