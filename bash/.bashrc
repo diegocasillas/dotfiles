@@ -51,7 +51,7 @@ reddit() {
 }
 
 open() {
-    if [ -n "$1" ]; then
+    if [ $# -eq 1 ]; then
         if [ ! -d "$1" ]; then
             if (! eval $1); then
                 return 1
