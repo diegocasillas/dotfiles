@@ -109,13 +109,15 @@ module.exports = {
     shellArgs: ['--command=usr/bin/bash.exe', '-l', '-i'],
 
     // for environment variables
-    env: { TERM: "cygwin" },
+    env: {
+      TERM: "cygwin"
+    },
 
     // set to false for no bell
     bell: false,
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: false,
 
     // if true, on right click selected text will be copied or pasted if no
     // selection is present (true by default on Windows)
@@ -125,6 +127,10 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    summon: {
+      hotkey: 'Control+Shift+Z'
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -133,7 +139,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-material-theme'],
+  plugins: ['hyper-material-theme', 'hyperterm-summon'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
