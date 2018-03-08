@@ -129,7 +129,7 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     summon: {
-      hotkey: 'Control+Shift+Z'
+      hotkey: 'Control+Alt+Z'
     }
   },
 
