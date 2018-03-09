@@ -18,6 +18,7 @@ alias github="chrome https://github.com/diegocasillasdev/"
 alias bitbucket="chrome https://bitbucket.org/"
 alias mediavida="chrome https://mediavida.com/"
 alias youtube="chrome https://youtube.com/"
+alias spotify="chrome https://open.spotify.com/"
 alias facebook="chrome https://facebook.com/"
 alias instagram="chrome https://instagram.com/"
 alias twitter="chrome https://twitter.com/"
@@ -72,7 +73,14 @@ open() {
 }
 
 xampp() {
-    /c/xampp/./xampp_$1.exe
+    TASKKILL //IM xampp-control.exe //F &> /dev/null
+
+    if [ "$1" == "start" -o -z "$1" ]; then
+        start /c/xampp/xampp-control.exe
+    else
+        /c/xampp/./xampp_stop.exe
+    fi
+
 
     return 0
 }
