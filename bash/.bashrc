@@ -14,10 +14,8 @@ alias drive="cd /c/'Google Drive'"
 alias chrome="start chrome"
 alias google="chrome https://google.com/"
 alias diegocasillasdev="chrome https://diegocasillasdev.com/"
-alias github="chrome https://github.com/diegocasillasdev/"
 alias bitbucket="chrome https://bitbucket.org/"
 alias mediavida="chrome https://mediavida.com/"
-alias youtube="chrome https://youtube.com/"
 alias spotify="chrome https://open.spotify.com/"
 alias facebook="chrome https://facebook.com/"
 alias instagram="chrome https://instagram.com/"
@@ -34,19 +32,30 @@ alias shrug="echo '¯\_(ツ)_/¯'"
 
 translate() {
     if [ $# -eq 3 ]; then
-        chrome https://translate.google.com/\#$2/$3/$1/
+        chrome https://translate.google.com/\#"$2"/"$3"/"$1"/
         
         return 0
     fi
 
-    chrome https://translate.google.com/\#en/es/$1/
+    chrome https://translate.google.com/\#en/es/"$1"/
 
     return 0    
 }
 
+youtube() {
+    if [ $# -eq 1 ]; then
+        chrome https://youtube.com/results\?search_query="$1"/
+
+        return 0
+    fi
+        chrome https://youtube.com/
+    
+    return 0
+}
+
 reddit() {
     if [ $# -eq 1 ]; then
-        chrome https://reddit.com/r/$1/
+        chrome https://reddit.com/r/"$1"/
 
         return 0    
     fi
@@ -55,16 +64,28 @@ reddit() {
     return 0
 }
 
+github() {
+    if [ $# -eq 1 ]; then
+        chrome https://github.com/diegocasillasdev/"$1"/
+
+        return 0
+    fi
+
+    chrome https://github.com/diegocasillasdev/
+
+    return 0
+}
+
 open() {
     if [ $# -eq 1 ]; then
         if [ ! -d "$1" ]; then
-            if (! eval $1); then
+            if (! eval "$1"); then
                 return 1
             else
-                eval $1
+                eval "$1"
             fi
         else
-            cd $1
+            cd "$1"
         fi
     fi
 
@@ -87,7 +108,7 @@ xampp() {
 }
 
 localhost() {
-    chrome "http://localhost/"$1
+    chrome http://localhost/"$1"/
 
     return 0
 }
