@@ -6,7 +6,6 @@ alias v="cd /v"
 alias diego="cd ~"
 alias appdata="cd ~/AppData"
 alias bashrc="code ~/.bashrc"
-alias www="cd /c/xampp/htdocs"
 alias desktop="cd ~/Desktop"
 alias documents="cd ~/Documents"
 alias downloads="cd ~/Downloads"
@@ -29,6 +28,18 @@ alias slack="~/AppData/Local/slack/slack.exe"
 alias heidi="/c/'Program Files'/HeidiSQL/./heidisql.exe"
 alias steam="/c/'Program Files (x86)'/Steam/Steam.exe"
 alias shrug="echo '¯\_(ツ)_/¯'"
+
+www() {
+    if [ $# -eq 1 ]; then
+        cd /c/xampp/htdocs/"$1"
+
+        return 0
+    fi
+
+    cd /c/xampp/htdocs
+
+    return 0
+}
 
 translate() {
     if [ $# -eq 3 ]; then
