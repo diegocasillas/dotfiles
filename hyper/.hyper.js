@@ -129,8 +129,9 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     summon: {
-      hotkey: 'Control+Alt+Z'
-    }
+      hideOnBlur: true,
+      hotkey: 'Control+Super+Z'
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -139,7 +140,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-material-theme', 'hyperterm-summon'],
+  plugins: ['hyper-material-theme', 'hyperterm-summon', 'hyper-keymap'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -149,5 +150,6 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
+    'new-tab': 'Ctrl+T'
   }
 };
