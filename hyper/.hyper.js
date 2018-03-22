@@ -129,8 +129,7 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     summon: {
-      hideOnBlur: true,
-      hotkey: 'Control+Super+Z'
+      hotkey: 'Control+Alt+Z'
     },
   },
 
