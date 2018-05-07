@@ -1,5 +1,8 @@
 {
-    "extends": "google",
+    "extends": [
+        "eslint:recommended",
+        "google"
+    ],
     "env": {
         "es6": true
     },
@@ -7,6 +10,10 @@
         "sourceType": "module"
     },
     "rules": {
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "object-curly-spacing": "off",
+        "comma-dangle": "off",
+        "max-len": "warn",
+        "no-console": "warn"
     }
 }
