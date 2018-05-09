@@ -9,6 +9,7 @@ alias hosts="code /c/Windows/System32/drivers/etc/hosts"
 alias bashrc="code ~/.bashrc"
 alias desktop="cd ~/Desktop"
 alias documents="cd ~/Documents"
+alias projects="cd ~/Documents/projects"
 alias downloads="cd ~/Downloads"
 alias drive="cd /c/'Google Drive'"
 alias chrome="start chrome"
@@ -32,12 +33,12 @@ alias shrug="echo '¯\_(ツ)_/¯'"
 
 www() {
     if [ $# -eq 1 ]; then
-        cd /c/xampp/htdocs/"$1"
+        cd /c/Apache24/htdocs/"$1"
 
         return 0
     fi
 
-    cd /c/xampp/htdocs
+    cd /c/Apache24/htdocs
 
     return 0
 }
@@ -102,6 +103,24 @@ open() {
     fi
 
     start .
+
+    return 0
+}
+
+apache () {
+    case "$1" in
+        "up") httpd -k start;;
+        "down") httpd -k stop;;
+    esac
+
+    return 0
+}
+
+maria() {
+    case "$1" in
+        "up") start mysqld;;
+        "down") mysqladmin shutdown -u root;;
+    esac
 
     return 0
 }
